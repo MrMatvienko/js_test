@@ -81,10 +81,96 @@
 // }
 
 //------------------------------------------------//
-let sum = 0;
-for (let i = 1; i <= 100; i++) {
-  if (i % 2 !== 0) {
-    sum += i;
-  }
-}
-console.log(sum);
+// let sum = 0;
+// for (let i = 1; i <= 100; i++) {
+//   if (i % 2 !== 0) {
+//     sum += i;
+//   }
+// }
+// console.log(sum);
+
+//------------------------------------------------//
+
+// a = 47;
+// b = 4;
+// c = a % b;
+// console.log(c);
+
+//------------------------------------------------//
+// const any = "Afafdkqwe";
+// const length = any.length;
+
+// for (let i = length - 1; i >= 0; i--) {
+//   console.log(any[i]);
+// }
+
+//------------------------------------------------//
+
+// const good = [4, 2, 1, 4, 2, 5, 2];
+// const quadro = good.map((item) => item ** 2);
+// console.log(quadro);
+// let sum = 0;
+// for (let i = 0; i < quadro.length; i++) {
+//   sum += quadro[i];
+// }
+// console.log(sum);
+
+//------------------------------------------------//
+
+// const good = [4, 16, 9, 25, 81, 1, 4];
+// const quadro = good.map((item) => Math.sqrt(item));
+// console.log(quadro);
+// let sum = 0;
+// for (let i = 0; i < quadro.length; i++) {
+//   sum += quadro[i];
+// }
+// console.log(sum);
+
+//------------------------------------------------//
+// const good = [4, 16, -9, 25, -81, 1, 4];
+// let sum = 0;
+// for (let i = 0; i < good.length; i++) {
+//   if (good[i] >= 0) {
+//     sum += good[i];
+//   }
+// }
+// console.log(sum);
+//------------------------------------------------//
+
+// const good = [4, 16, -9, 25, -81, 1, 4];
+// let sum = 0;
+// for (let i = 0; i < good.length; i++) {
+//   if (good[i] > 0 && good[i] < 10) {
+//     sum += good[i];
+//   }
+// }
+// console.log(sum);
+
+//------------------------------------------------//
+
+// const number = 12345;
+// const digitArray = Array.from(String(number)).map(Number);
+
+// console.log(digitArray);
+// console.log(digitArray.reverse().join(""));
+
+// let sum = 0;
+// for (let i = 0; i < digitArray.length; i++) {
+//   sum += digitArray[i];
+// }
+// console.log(sum);
+//------------------------------------------------//
+// const a = [];
+
+// for (let i = 1; i <= 100; i++) {
+//   if (i % 2 === 0) {
+//     a.push(i);
+//   }
+// }
+// console.log(a);
+//------------------------------------------------//
+// const numbers = [1.456, 2.125, 3.32, 4.1, 5.34];
+
+// const roundedNumbers = numbers.map((num) => Math.round(num * 10) / 10);
+
+// console.log(roundedNumbers);
