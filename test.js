@@ -174,3 +174,39 @@
 // const roundedNumbers = numbers.map((num) => Math.round(num * 10) / 10);
 
 // console.log(roundedNumbers);
+
+//------------------------------------------------//
+
+// const a = ["http://asdasf", "asfadgasd.html", "SSSSS", "http://SSSSSS"];
+// const filtered1 = a.filter((item) => item.startsWith("http://"));
+// const filtered = a.filter((item) => item.endsWith(".html"));
+// console.log(filtered1);
+// console.log(filtered);
+
+//------------------------------------------------//
+// const good = [4, 16, 9, 25, 81, 1, 4];
+// const good2 = good.map((item) => item * 1.1);
+// console.log(good2);
+
+//------------------------------------------------//
+
+// const a = [];
+// for (let i = 1; i <= 100; i++) {
+//   a.push(Math.floor(Math.random() * 100));
+// }
+// console.log(a);
+//------------------------------------------------//
+
+// let arr1 = [1, 2, 3];
+// let arr2 = [4, 5, 6];
+
+// let arr3 = arr1.concat(arr2);
+
+// console.log(arr3);
+
+//------------------------------------------------//
+// const arr = [1, 2, 3, 4, 5, 6];
+// for (let i = 0; i < arr.length; i += 2) {
+//   const subarray = arr.slice(i, i + 2);
+//   console.log(subarray);
+// }
