@@ -210,3 +210,10 @@
 //   const subarray = arr.slice(i, i + 2);
 //   console.log(subarray);
 // }
+//------------------------------------------------//
+// const str = "my like number 0";
+// console.log(str.indexOf(0));
+
+//------------------------------------------------//
+
+let arr = [];
