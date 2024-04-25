@@ -216,4 +216,11 @@
 
 //------------------------------------------------//
 
-let arr = [];
+for (let i = 10; i <= 999; i++) {
+  let first = Math.floor(i / 100);
+  const second = Math.floor((i % 100) / 10);
+
+  if (first + second === 5) {
+    console.log(i);
+  }
+}
