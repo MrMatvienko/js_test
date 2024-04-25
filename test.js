@@ -225,3 +225,52 @@
 // }
 
 //------------------------------------------------//
+// const arr = [1, 2, 3, 4, 5, 6];
+// console.log(arr.length);
+// const arr2 = arr.splice(0, arr.length / 2);
+// let sum = 0;
+// for (let i = 0; i < arr2.length; i++) {
+//   sum += arr2[i];
+// }
+// console.log(sum);
+//------------------------------------------------//
+// const arr = [1, -2, 3, 4, -5, -6];
+// let count = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] < 0) {
+//     count = count + 1;
+//   }
+// }
+// console.log(count);
+//------------------------------------------------//
+// const arr = [1, -2, 3, 4, -5, 6];
+// const posarr = arr.filter((item) => item > 0);
+// console.log(posarr);
+
+//------------------------------------------------//
+
+// const str = "Abcdef";
+// let modifiedStr = str.slice(0, -1);
+// console.log(modifiedStr);
+//------------------------------------------------//
+
+// const arr = [1, 2, 3, 4, 5, 6];
+
+// const arrhalf = arr.length / 2;
+// console.log(arrhalf);
+// let sum1 = 0;
+// let sum2 = 0;
+// const half1 = arr.slice(0, arrhalf);
+// const half2 = arr.slice(arrhalf);
+// half1.forEach((item) => {
+//   sum1 += item;
+// });
+// console.log(sum1);
+
+// half2.forEach((item) => {
+//   sum2 += item;
+// });
+// console.log(sum2);
+
+// const math = sum1 / sum2;
+// console.log(math);
