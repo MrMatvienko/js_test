@@ -216,11 +216,12 @@
 
 //------------------------------------------------//
 
-for (let i = 10; i <= 999; i++) {
-  let first = Math.floor(i / 100);
-  const second = Math.floor((i % 100) / 10);
+// for (let i = 10; i <= 999; i++) {
+//   let str = String(i);
+//   let sum = Number(str[0]) + Number(str[1]);
+//   if (sum === 5) {
+//     console.log(i);
+//   }
+// }
 
-  if (first + second === 5) {
-    console.log(i);
-  }
-}
+//------------------------------------------------//
