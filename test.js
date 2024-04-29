@@ -274,3 +274,37 @@
 
 // const math = sum1 / sum2;
 // console.log(math);
+
+//------------------------------------------------//
+
+// const word1 = "Nikolaі";
+// const word2 = "Amanda";
+
+// if (word1.toLowerCase()[word1.length - 1] === word2.toLowerCase()[0]) {
+//   console.log("Рівність вірна");
+// } else {
+//   console.log("Рівність не вірна");
+// }
+//------------------------------------------------//
+// const stroke = "120421023522";
+
+// function findThreeZero(str) {
+//   let count = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === "0") {
+//       count = count + 1;
+//       if (count === 3) {
+//         return i;
+//       }
+//     }
+//   }
+//   return -1;
+// }
+
+// const zeroPosition = findThreeZero(stroke);
+// if (zeroPosition != -1) {
+//   console.log(`Позиція третього нуля ${zeroPosition}`);
+// } else {
+//   console.log("Позицію не знайдено");
+// }
+//------------------------------------------------//
