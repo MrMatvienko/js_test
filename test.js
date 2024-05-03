@@ -308,3 +308,83 @@
 //   console.log("Позицію не знайдено");
 // }
 //------------------------------------------------//
+
+// const dateString = "2025-12-31";
+
+// const [year, month, day] = dateString.split("-");
+
+// const dataObject = {
+//   year,
+//   month,
+//   day,
+// };
+// console.log(dataObject);
+//------------------------------------------------//
+
+// const str = "12,34,56";
+// const arrNum = str.split(",").map(Number);
+// console.log(arrNum);
+// let sum = 0;
+// for (let i = 0; i < arrNum.length; i++) {
+//   sum += arrNum[i];
+// }
+// console.log(sum);
+//------------------------------------------------//
+// const str1 = "ad1ff210as23";
+
+// function findNumber(str) {
+//   for (let i = 0; i < str.length; i++) {
+//     if (!isNaN(str[i])) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
+
+// const findNum = findNumber(str1);
+// if (findNum !== -1) {
+//   console.log("Позиція першої цифри:", findNum);
+// } else {
+//   console.log("Цифра не знайдена в рядку.");
+// }
+//------------------------------------------------//
+// const dataObject = {
+//   year: 1993,
+//   month: 12,
+//   day: 04,
+// };
+// const keys = Object.keys(dataObject);
+// console.log(keys);
+// const value = Object.values(dataObject);
+// console.log(value);
+//------------------------------------------------//
+// Дано число. Выведите в консоль количество четных цифр в этом числе.
+// const num = 281753;
+
+// const numStr = num.toString().split("");
+// console.log(numStr);
+// let countPlus = 0;
+// let countMinus = 0;
+// for (let i = 0; i < numStr.length; i++) {
+//   if (numStr[i] % 2 === 0) {
+//     countPlus += 1;
+//   } else {
+//     countMinus += 1;
+//   }
+// }
+// console.log("Кількість парних цифр:", countPlus);
+// console.log("Кількість непарних цифр:", countMinus);
+//------------------------------------------------//
+// const srt = "abcde";
+// console.log(srt.toUpperCase());
+//------------------------------------------------//
+
+// const str = "aaa bbb ccc";
+
+// const words = str.split(" ");
+// console.log(words);
+// const upper = words
+//   .map((word) => word[0].toUpperCase() + word.slice(1))
+//   .join(" ");
+// console.log(upper);
+//------------------------------------------------//
