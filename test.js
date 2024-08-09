@@ -388,3 +388,71 @@
 //   .join(" ");
 // console.log(upper);
 //------------------------------------------------//
+
+// function sumAll(...numbers) {
+//   let sum = 0;
+//   for (let num of numbers) {
+//     sum = sum + num;
+//   }
+//   console.log(sum);
+// }
+
+// console.log(sumAll(1, 2, 3)); // 6
+// console.log(sumAll(5, 10, 15, 20)); // 50
+
+//------------------------------------------------//
+
+// function getNames(firstName, ...rest) {
+//   return {
+//     name: firstName,
+//     rest: rest,
+//   };
+// }
+// console.log(getNames("John", "Doe", "Smith", "Taylor"));
+// // { name: 'John', rest: ['Doe', 'Smith', 'Taylor'] }
+
+//------------------------------------------------//
+// function filterEven(...numbers) {
+//   let mus = [];
+//   for (let num of numbers) {
+//     if (num % 2 === 0) {
+//       mus.push(num);
+//     }
+//   }
+//   return mus;
+// }
+
+// console.log(filterEven(1, 2, 3, 4, 5, 6)); // [2, 4, 6]
+
+//------------------------------------------------//
+// function addItems(arr, ...newItems) {
+//   return arr.concat(newItems);
+// }
+
+// console.log(addItems([1, 2, 3], 4, 5, 6)); // [1, 2, 3, 4, 5, 6]
+
+//------------------------------------------------//
+// function mergeArrays(...arrays) {
+//   let mergedArray = [];
+
+//   for (let arr of arrays) {
+//     if (Array.isArray(arr)) {
+//       mergedArray = mergedArray.concat(arr);
+//     } else {
+//       console.log(`${arr} не є масивом і не буде доданий`);
+//     }
+//   }
+
+//   return mergedArray;
+// }
+// console.log(mergeArrays([1, 2], [3, 4], [5, 6])); // [1, 2, 3, 4, 5, 6]
+
+function copyArray(arr) {
+  return [...arr]; // Використовуємо spread для створення копії масиву
+}
+
+const originalArray = [1, 2, 3];
+const copiedArray = copyArray(originalArray);
+
+console.log(copiedArray); // [1, 2, 3]
+console.log(copiedArray === originalArray); // false (це різні об'єкти)
