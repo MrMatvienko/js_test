@@ -1,52 +1,52 @@
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
 
-const cube = document.querySelector(".cube");
-cube.addEventListener("click", toggleRotation);
-let rotate = 0;
-let isRotation = false;
-let lastTimes = 0;
-let colorInterval;
-let scaleInterval;
-let isScalingUp = false;
-let currentScale = 1;
-const rotationSpeed = 1;
+// const cube = document.querySelector(".cube");
+// cube.addEventListener("click", toggleRotation);
+// let rotate = 0;
+// let isRotation = false;
+// let lastTimes = 0;
+// let colorInterval;
+// let scaleInterval;
+// let isScalingUp = false;
+// let currentScale = 1;
+// const rotationSpeed = 1;
 
-function toggleRotation() {
-  if (!isRotation) {
-    isRotation = true;
+// function toggleRotation() {
+//   if (!isRotation) {
+//     isRotation = true;
 
-    colorInterval = setInterval(() => {
-      const randomColor = getRandomHexColor();
-      cube.style.backgroundColor = randomColor;
-    }, 2000);
+//     colorInterval = setInterval(() => {
+//       const randomColor = getRandomHexColor();
+//       cube.style.backgroundColor = randomColor;
+//     }, 2000);
 
-    scaleInterval = setInterval(() => {
-      currentScale = isScalingUp ? 1.5 : 1;
-      isScalingUp = !isScalingUp;
-      cube.style.transform = `scale(${currentScale}) rotate(${rotate}deg)`;
-    }, 2000);
+//     scaleInterval = setInterval(() => {
+//       currentScale = isScalingUp ? 1.5 : 1;
+//       isScalingUp = !isScalingUp;
+//       cube.style.transform = `scale(${currentScale}) rotate(${rotate}deg)`;
+//     }, 2000);
 
-    requestAnimationFrame(rotateCube);
-  } else {
-    isRotation = false;
-    clearInterval(colorInterval);
-    clearInterval(scaleInterval);
-  }
-}
+//     requestAnimationFrame(rotateCube);
+//   } else {
+//     isRotation = false;
+//     clearInterval(colorInterval);
+//     clearInterval(scaleInterval);
+//   }
+// }
 
-function rotateCube() {
-  if (!isRotation) return;
-  rotate += rotationSpeed;
-  // console.log(rotate);
+// function rotateCube() {
+//   if (!isRotation) return;
+//   rotate += rotationSpeed;
+//   // console.log(rotate);
 
-  cube.style.transform = `scale(${currentScale}) rotate(${rotate}deg)`;
+//   cube.style.transform = `scale(${currentScale}) rotate(${rotate}deg)`;
 
-  requestAnimationFrame(rotateCube);
-}
+//   requestAnimationFrame(rotateCube);
+// }
 
 // a = -5;
 
@@ -1117,12 +1117,126 @@ function rotateCube() {
 // console.log(num);
 // var num;
 //------------------------------------------------//
+//---POLINDROME-----//
+// const isPolindrom = (str) => {
+//   return str === str.split("").reverse().join("");
+// };
+// console.log(isPolindrom("OTTO"));
+
 //------------------------------------------------//
+// const users = [
+//   { id: "id1a", name: "Livvi Doe", location: "Michigan" },
+//   { id: "id2b", name: "Jane Doe", location: "Alabama" },
+//   { id: "id3c", name: "Sean Doe", location: "Michigan" },
+//   { id: "id4d", name: "Kate Doe", location: "California" },
+// ];
+// const online = [
+//   { id: "id1a", isOnline: true },
+//   { id: "id3c", isOnline: true },
+//   { id: "id5e", isOnline: false },
+//   { id: "id4d", isOnline: true },
+// ];
+
+// function getUserOnline(users, online, location) {
+//   onlineUser = [];
+//   online.forEach((user) => user.isOnline && onlineUser.push(user.id));
+//   console.log(onlineUser);
+//   const userFilter = users.filter((user) => {
+//     return user.location === location && onlineUser.includes(user.id);
+//   });
+//   return userFilter;
+// }
+// console.log(getUserOnline(users, online, "Michigan"));
+
 //------------------------------------------------//
+
+// const students = [
+//   { id: "st1", name: "John Doe", age: 20, group: "A" },
+//   { id: "st2", name: "Jane Smith", age: 22, group: "B" },
+//   { id: "st3", name: "Emily Johnson", age: 19, group: "A" },
+//   { id: "st4", name: "Michael Brown", age: 21, group: "C" },
+//   { id: "st5", name: "Sarah Lee", age: 23, group: "B" },
+// ];
+
+// const completedCourses = [
+//   { id: "st1", hasCompleted: true },
+//   { id: "st2", hasCompleted: false },
+//   { id: "st3", hasCompleted: true },
+//   { id: "st5", hasCompleted: true },
+// ];
+
+// function getStudentsCompletedCourses(students, completedCourses, group) {
+//   let compileted = [];
+//   completedCourses.forEach(
+//     (student) => student.hasCompleted && compileted.push(student.id)
+//   );
+//   console.log(compileted);
+//   return students.filter((student) => {
+//     return student.group === group && compileted.includes(student.id);
+//   });
+// }
+// console.log(getStudentsCompletedCourses(students, completedCourses, "A"));
 //------------------------------------------------//
+// const products = [
+//   { id: 1, name: "Laptop", price: 1000 },
+//   { id: 2, name: "Phone", price: 500 },
+//   { id: 3, name: "Tablet", price: 600 },
+//   { id: 4, name: "Monitor", price: 300 },
+// ];
+
+// function getAffordableProducts(products, maxPrice) {
+//   return products.filter(
+//     (product) => product.price === maxPrice || product.price < maxPrice
+//   );
+// }
+
+// console.log(getAffordableProducts(products, 600));
 //------------------------------------------------//
+// const students = [
+//   { id: 1, name: "Alice", age: 22 },
+//   { id: 2, name: "Bob", age: 19 },
+//   { id: 3, name: "Charlie", age: 23 },
+//   { id: 4, name: "David", age: 21 },
+// ];
+// function getYoungestStudent(students) {
+//   const youngestStudent = students.reduce((young, student) => {
+//     return student.age < young.age ? student : young;
+//   });
+//   return youngestStudent;
+// }
+// console.log(getYoungestStudent(students));
+
 //------------------------------------------------//
+// const strings = ["hello", "world", "javascript", "developer"];
+
+// function countChar(strings, char) {
+//   return strings.join("").split(char).length - 1;
+// }
+// console.log(countChar(strings, "o"));
 //------------------------------------------------//
+// const users = [
+//   { name: "Alice", age: 30 },
+//   { name: "Bob", age: 20 },
+//   { name: "Charlie", age: 30 },
+//   { name: "David", age: 20 },
+//   { name: "Eve", age: 40 },
+// ];
+
+// function groupByAge(users) {
+//   let ageArr = [];
+//   users.forEach((user) => ageArr.push(user.age));
+//   console.log(ageArr);
+//   const groupAge = [...new Set(ageArr)];
+//   console.log(groupAge);
+
+//   let group = {};
+//   groupAge.forEach((age) => {
+//     group[age] = users.filter((user) => user.age === age);
+//   });
+//   return group;
+// }
+
+// console.log(groupByAge(users));
 //------------------------------------------------//
 //------------------------------------------------//
 //------------------------------------------------//
