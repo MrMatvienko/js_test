@@ -1,3 +1,53 @@
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
+const cube = document.querySelector(".cube");
+cube.addEventListener("click", toggleRotation);
+let rotate = 0;
+let isRotation = false;
+let lastTimes = 0;
+let colorInterval;
+let scaleInterval;
+let isScalingUp = false;
+let currentScale = 1;
+const rotationSpeed = 1;
+
+function toggleRotation() {
+  if (!isRotation) {
+    isRotation = true;
+
+    colorInterval = setInterval(() => {
+      const randomColor = getRandomHexColor();
+      cube.style.backgroundColor = randomColor;
+    }, 2000);
+
+    scaleInterval = setInterval(() => {
+      currentScale = isScalingUp ? 1.5 : 1;
+      isScalingUp = !isScalingUp;
+      cube.style.transform = `scale(${currentScale}) rotate(${rotate}deg)`;
+    }, 2000);
+
+    requestAnimationFrame(rotateCube);
+  } else {
+    isRotation = false;
+    clearInterval(colorInterval);
+    clearInterval(scaleInterval);
+  }
+}
+
+function rotateCube() {
+  if (!isRotation) return;
+  rotate += rotationSpeed;
+  // console.log(rotate);
+
+  cube.style.transform = `scale(${currentScale}) rotate(${rotate}deg)`;
+
+  requestAnimationFrame(rotateCube);
+}
+
 // a = -5;
 
 // if (a < 0) {
@@ -5,11 +55,11 @@
 // } else {
 //   console.log(`Ваше число ${a} - дадатнє`);
 // }
-//------------------------------------------------//
+// ------------------------------------------------//
 
 // stroke = "Elevator";
 // console.log(stroke.length);
-//------------------------------------------------//
+// ------------------------------------------------//
 
 // a = 10;
 
@@ -18,7 +68,7 @@
 // } else {
 //   console.log(`Ваше число ${a} - не парне`);
 // }
-//------------------------------------------------//
+// ------------------------------------------------//
 // const a = "Amanda";
 // const b = "Jack";
 
@@ -27,7 +77,7 @@
 // } else {
 //   console.log("First leter a != first leter b");
 // }
-//------------------------------------------------//
+// ------------------------------------------------//
 
 // const nam = "Маріуполь";
 // let lastLet;
@@ -447,12 +497,649 @@
 // }
 // console.log(mergeArrays([1, 2], [3, 4], [5, 6])); // [1, 2, 3, 4, 5, 6]
 
-function copyArray(arr) {
-  return [...arr]; // Використовуємо spread для створення копії масиву
-}
+//------------------------------------------------//
 
-const originalArray = [1, 2, 3];
-const copiedArray = copyArray(originalArray);
+// function copyArray(arr) {
+//   return [...arr];
+// }
 
-console.log(copiedArray); // [1, 2, 3]
-console.log(copiedArray === originalArray); // false (це різні об'єкти)
+// const originalArray = [1, 2, 3];
+// const copiedArray = copyArray(originalArray);
+
+// console.log(copiedArray);
+// console.log(copiedArray === originalArray);
+
+//------------------------------------------------//
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "На березі спокійних вод",
+//     author: "Роберт Шеклі",
+//     rating: 8.51,
+//   },
+// ];
+
+// for (const book of books) {
+//   const { title, author, rating } = book;
+//   console.log(title);
+//   console.log(author);
+//   console.log(rating);
+// }
+
+//------------------------------------------------//
+// function squareNumbers(numbers) {
+//   return numbers.map((item) => item ** 2);
+// }
+// console.log(squareNumbers([1, 2, 3, 4])); // Виведе: [1, 4, 9, 16]
+
+//------------------------------------------------//
+// function filterEvenNumbers(numbers) {
+//   return numbers.filter((item) => item % 2 === 0);
+// }
+// console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6])); // Виведе: [2, 4, 6]
+//------------------------------------------------//
+// function findFirstNegative(numbers) {
+//   return numbers.find((item) => item < 0);
+// }
+
+// console.log(findFirstNegative([3, 7, -2, 5, -8])); // Виведе: -2
+//------------------------------------------------//
+
+// function areAllPositive(numbers) {
+//   // Поверніть true, якщо всі числа додатні
+//   return numbers.every((item) => item > 0);
+// }
+
+// console.log(areAllPositive([2, 4, 6, 8])); // Виведе: true
+// console.log(areAllPositive([2, -4, 6, 8])); // Виведе: false
+
+//------------------------------------------------//
+// function joinNames(names) {
+//   // Поверніть один рядок з іменами, з'єднаними комами
+//   return names.join(", ");
+// }
+
+// console.log(joinNames(["John", "Jane", "Doe"])); // Виведе: 'John, Jane, Doe'
+
+//------------------------------------------------//
+
+// function countOccurrences(arr, element) {
+//   // Поверніть кількість входжень елемента в масив
+//   return arr.reduce((count, current) => {
+//     if (current === element) {
+//       count++;
+//     }
+//     return count;
+//   }, 0);
+// }
+
+// console.log(countOccurrences([1, 2, 3, 4, 3, 2, 3], 3)); // Виведе: 3
+
+//------------------------------------------------//
+
+// function arrayToObject(entries) {
+//   // Поверніть об'єкт, створений з масиву пар [ключ, значення]
+//   return entries.reduce((obj, [key, value]) => {
+//     obj[key] = value; // Додаємо нову властивість до об'єкта
+//     return obj;
+//   }, {});
+// }
+
+// console.log(
+//   arrayToObject([
+//     ["a", 1],
+//     ["b", 2],
+//     ["c", 3],
+//   ])
+// );
+// Виведе: { a: 1, b: 2, c: 3 }
+//------------------------------------------------//
+
+// function removeDuplicates(arr) {
+//   return arr.filter((item, index) => arr.indexOf(item) === index);
+// }
+
+// console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Виведе: [1, 2, 3, 4, 5]
+
+//------------------------------------------------//
+
+// function getSubarray(arr, startIndex, endIndex) {
+//   // Поверніть частину масиву між індексами startIndex і endIndex
+//   return arr.slice(startIndex, endIndex);
+// }
+
+// console.log(getSubarray([10, 20, 30, 40, 50], 1, 4)); // Виведе: [20, 30, 40]
+
+//------------------------------------------------//
+
+// function hasEvenNumber(numbers) {
+//   // Поверніть true, якщо в масиві є хоча б одне парне число
+//   return numbers.some((number) => number % 2 === 0);
+// }
+
+// console.log(hasEvenNumber([1, 3, 5, 7, 8])); // Виведе: true
+// console.log(hasEvenNumber([1, 3, 5, 7])); // Виведе: false
+
+//------------------------------------------------//
+// function logElements(arr) {
+//   // Виведіть кожен елемент масиву в консоль
+//   arr.forEach((element) => {
+//     console.log(element);
+//   });
+// }
+
+// logElements([1, 2, 3, 4]);
+//------------------------------------------------//
+// function sumArray(arr) {
+//   let sum = 0;
+//   arr.forEach((el) => {
+//     sum += el;
+//   });
+//   return sum;
+// }
+
+// console.log(sumArray([5, 10, 15])); // Виведе: 30
+
+//------------------------------------------------//
+// function convertToUpperCase(arr) {
+//   let upperCaseArr = [];
+//   // Перетворіть кожен рядок на великий регістр і додайте до upperCaseArr
+//   arr.forEach((el) => {
+//     upperCaseArr.push(el.toUpperCase());
+//   });
+//   return upperCaseArr;
+// }
+
+// console.log(convertToUpperCase(["hello", "world"])); // Виведе: ['HELLO', 'WORLD'
+
+//------------------------------------------------//
+
+// function arrayToObj(arr) {
+//   let obj = {};
+//   // Перетворіть масив пар [ключ, значення] на об'єкт
+//   arr.forEach(([key, value]) => {
+//     obj[key] = value;
+//   });
+//   return obj;
+// }
+
+// console.log(
+//   arrayToObj([
+//     ["a", 1],
+//     ["b", 2],
+//     ["c", 3],
+//   ])
+// );
+// Виведе: { a: 1, b: 2, c: 3 }
+
+//------------------------------------------------//
+// function incrementArray(arr) {
+//   // Збільшіть кожен елемент масиву на 1
+//   arr.forEach((item, index) => {
+//     arr[index] = item + 1; // Збільшуємо кожен елемент на 1
+//   });
+// }
+
+// let numbers = [1, 2, 3, 4];
+// incrementArray(numbers);
+// console.log(numbers); // Виведе: [2, 3, 4, 5]
+//------------------------------------------------//
+
+// function checkEvenNumbers(arr) {
+//   let allEven = true;
+//   arr.forEach((number) => {
+//     if (number % 2 !== 0) {
+//       console.log("Масив містить непарне число");
+//       allEven = false;
+//     }
+//   });
+//   if (allEven) {
+//     console.log("Всі числа парні");
+//   }
+// }
+// checkEvenNumbers([6, 0, 8, 4]);
+//------------------------------------------------//
+// function calculateLengths(arr) {
+//   arr.forEach((item) => {
+//     console.log(item.length);
+//   });
+// }
+// calculateLengths(["hello", "worlooo"]);
+//------------------------------------------------//
+// function addProperty(arr) {
+//   arr.forEach((element, index) => {
+//     const newObj = {
+//       id: index,
+//       ...element,
+//     };
+//     // Оновлюємо елемент масиву
+//     arr[index] = newObj;
+//   });
+
+//   console.log(arr);
+// }
+// addProperty([
+//   { name: "Alex" },
+//   { name: "Anna" },
+//   { name: "Amanda" },
+//   { name: "Avrora" },
+// ]);
+//------------------------------------------------//
+
+// function sortNumbers(arr) {
+//   return arr.sort((a, b) => a - b);
+// }
+// console.log(sortNumbers([4, 2, 5, 1, 7]));
+
+//------------------------------------------------//
+
+// function filterEvenNumbers(arr) {
+//   return arr.filter((item) => item % 2 === 0);
+// }
+// console.log(filterEvenNumbers([4, 2, 5, 1, 7]));
+//------------------------------------------------//
+
+// function findElement(arr, string) {
+//   return arr.find((item) => item.name === string);
+// }
+// console.log(
+//   findElement(
+//     [
+//       { name: "Alex" },
+//       { name: "Anna" },
+//       { name: "Amanda" },
+//       { name: "Avrora" },
+//     ],
+//     "Amanda"
+//   )
+// );
+
+//------------------------------------------------//
+
+// function transformArray(arr) {
+//   return arr.map((item) => item * 5);
+// }
+// console.log(transformArray([4, 2, 5, 1, 7]));
+
+//------------------------------------------------//
+
+// function sumArray(arr) {
+//   return arr.reduce((acum, item) => acum + item, 0);
+// }
+// console.log(sumArray([4, 2, 5, 1, 7]));
+
+//------------------------------------------------//
+
+// function findElement(arr) {
+//   return arr.map((item) => item.name).filter((name) => name !== undefined);
+// }
+// console.log(
+//   findElement([
+//     { name: "Alex" },
+//     { female: "Anna" },
+//     { name: "Amanda" },
+//     { shop: "Avrora" },
+//   ])
+// );
+
+//------------------------------------------------//
+
+// function findMax(arr) {
+//   return Math.max(...arr);
+// }
+// console.log(findMax([4, 2, 5, 1, 7]));
+
+//------------------------------------------------//
+// function findMax(arr) {
+//   return arr.includes(2);
+// }
+// console.log(findMax([4, 2, 5, 1, 7]));
+//------------------------------------------------//
+// function findIndex(arr, number) {
+//   return arr.findIndex((item) => item === number);
+// }
+// console.log(findIndex([4, 2, 5, 1, 7], 7));
+//------------------------------------------------//
+
+// function mergeArrays(arr, arr1) {
+//   return [...new Set(arr.concat(arr1))];
+// }
+// console.log(mergeArrays([4, 2, 5, 1, 7], [3, 4, 9, 0, 6]));
+
+//------------------------------------------------//
+// function splitWords(str) {
+//   return str.split(" ");
+// }
+
+// console.log(splitWords("Hello world, welcome to JavaScript"));
+//------------------------------------------------//
+
+// function findCommonElements(arr1, arr2) {
+//   return arr1.filter((item) => arr2.includes(item));
+// }
+
+// console.log(findCommonElements([1, 2, 3], [2, 3, 4]));
+
+//------------------------------------------------//
+// function extractValues(arr, key) {
+//   return arr.map((item) => item[key]);
+// }
+
+// console.log(extractValues([{ a: 1 }, { a: 2 }, { a: 3 }], "a"));
+//------------------------------------------------//
+
+// function average(arr) {
+//   return arr.reduce((acum, prev) => acum + prev, 0) / arr.length;
+// }
+
+// console.log(average([2, 4, 6, 8]));
+
+//------------------------------------------------//
+// function filterByLength(arr, n) {
+//   return arr.filter((item) => item.length >= n);
+// }
+
+// console.log(filterByLength(["apple", "banana", "cherry", "date"], 5));
+
+//------------------------------------------------//
+
+// function objectToString(arr) {
+//   return arr.map((obj) => Object.values(obj).join(" "));
+// }
+
+// console.log(
+//   objectToString([
+//     { name: "John", age: 30 },
+//     { name: "Jane", age: 25 },
+//   ])
+// );
+// Виведе: ["John 30", "Jane 25"]
+
+//------------------------------------------------//
+// function numbersToStrings(arr) {
+//   return arr.map((item) => item.toString());
+// }
+
+// console.log(numbersToStrings([1, 2, 3, 4]));
+
+//------------------------------------------------//
+// function removeElement(arr, value) {
+//   return arr.filter((item) => item !== value);
+// }
+
+// console.log(removeElement([1, 2, 3, 4, 3], 3));
+
+//------------------------------------------------//
+// function countOccurrences(arr, value) {
+//   return arr.filter((item) => item === value).length;
+// }
+
+// console.log(countOccurrences([1, 2, 2, 3, 2, 4], 2));
+
+// function countOccurrences(arr, value) {
+//   return arr.reduce((count, item) => {
+//     return item === value ? count + 1 : count;
+//   }, 0);
+// }
+// console.log(countOccurrences([1, 2, 2, 3, 2, 4], 2));
+
+//------------------------------------------------//
+
+// function mergeMultipleArrays(...arrays) {
+//   return arrays.reduce((acc, currentArray) => acc.concat(currentArray), []);
+// }
+
+// console.log(mergeMultipleArrays([1, 2], [3, 4], [5, 6]));
+// Виведе: [1, 2, 3, 4, 5, 6]
+//------------------------------------------------//
+// function findMin(arr) {
+//   return Math.min(...arr);
+// }
+
+// console.log(findMin([10, 5, 3, 8, 2]));
+
+//------------------------------------------------//
+// function isAllNumbers(arr) {
+//   return arr.every((item) => typeof item === "number");
+// }
+
+// console.log(isAllNumbers([1, 2, 3, 4]));
+// // Виведе: true
+
+// console.log(isAllNumbers([1, 2, "3", 4]));
+// // Виведе: false
+
+//------------------------------------------------//
+
+// function arrayToObject(arr) {
+//   return arr.reduce((obj, [key, value]) => {
+//     obj[key] = value;
+//     return obj;
+//   }, {});
+// }
+
+// console.log(
+//   arrayToObject([
+//     ["name", "John"],
+//     ["age", 30],
+//     ["city", "New York"],
+//   ])
+// );
+// Виведе: { name: "John", age: 30, city: "New York" }
+
+//------------------------------------------------//
+
+// function filterAndMap(arr) {
+//   return arr.filter((item) => item % 2 === 0).map((item) => item ** 2);
+// }
+
+// console.log(filterAndMap([1, 2, 3, 4, 5, 6]));
+// Виведе: [4, 16, 36]
+//------------------------------------------------//
+
+// function areAllUnique(arr) {
+//   return arr.every((item, index) => arr.indexOf(item) === index);
+// }
+
+// console.log(areAllUnique([1, 2, 3, 4]));
+// // Виведе: true
+
+// console.log(areAllUnique([1, 2, 2, 4]));
+// Виведе: false
+
+//------------------------------------------------//
+// function removeDuplicates(arr) {
+//   return arr.filter((item, index) => arr.indexOf(item) === index);
+// }
+
+// console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]));
+// // Виведе: [1, 2, 3, 4, 5]
+//------------------------------------------------//
+// function findMin(arr) {
+//   return arr.reduce((min, current) => (current < min ? current : min), arr[0]);
+// }
+
+// console.log(findMin([5, 3, 9, 1, 7]));
+// Виведе: 1
+//------------------------------------------------//
+
+// function joinStrings(arr) {
+//   return arr.join(" ");
+// }
+
+// console.log(joinStrings(["Hello", "world", "this", "is", "JavaScript"]));
+// // Виведе: "Hello world this is JavaScript"
+//------------------------------------------------//
+
+// const user = {
+//   name: "Alice",
+//   delayedGreet: function () {
+//     setTimeout(() => {
+//       console.log(`Hello, my name is ${this.name}`);
+//     }, 1000);
+//   },
+// };
+
+// user.delayedGreet(); // Очікується: 'Hello, my name is Alice' через 1 секунду
+//------------------------------------------------//
+// const person1 = { name: "Bob" };
+// const person2 = { name: "Charlie" };
+
+// function introduce() {
+//   console.log(`Hi, I am ${this.name}`);
+// }
+// introduce.call(person1);
+// introduce.call(person2);
+
+// Викличте функцію introduce для обох об'єктів person1 та person2, використовуючи call
+//------------------------------------------------//
+// function sum(a, b) {
+//   return a + b;
+// }
+
+// const numbers = [5, 10];
+
+// const result = sum.apply(null, numbers);
+// console.log(result);
+
+// Викличте функцію sum за допомогою apply, передавши масив numbers
+//------------------------------------------------//
+// const counter = {
+//   count: 0,
+//   start: function () {
+//     setInterval(() => {
+//       this.count++;
+//       console.log(this.count);
+//     }, 4000);
+//   },
+// };
+
+// counter.start();
+//------------------------------------------------//
+// function doubleValues(arr) {
+//   return arr.map((item) => item * 2);
+// }
+// console.log(doubleValues([1, 2, 4, 6, 2]));
+// //------------------------------------------------//
+
+// function findWord(arrString, searchWord) {
+//   return arrString.includes(searchWord);
+// }
+// console.log(findWord(["Anna", "Ben", "Susan"], "Ben"));
+// //------------------------------------------------//
+// function findWord2(removeEmptyStrings) {
+//   return removeEmptyStrings.filter((item) => item.trim() !== "");
+// }
+// console.log(findWord2(["Anna", "Ben", "Susan", " "]));
+
+// //------------------------------------------------//
+
+// function getNames(arrOb) {
+//   return arrOb.map((item) => item.name);
+// }
+// console.log(getNames([{ name: "Anna" }, { name: "Sam" }]));
+// // //------------------------------------------------//
+
+// function countOccurrences(arrElement, element) {
+//   return arrElement.reduce((totalCount, item) => {
+//     return item === element ? totalCount + 1 : totalCount;
+//   }, 0);
+// }
+// console.log(countOccurrences(["Anna", "Ben", "Susan", "Anna", "Anna"], "Anna"));
+
+//------------------------------------------------//
+
+// function getSum(arr) {
+//   return arr.reduce((sum, item) => {
+//     if (item > 0 && item < 10) {
+//       return sum + item;
+//     }
+//     return sum;
+//   }, 0);
+// }
+// console.log(getSum([1, 10, 1, -2]));
+//------------------------------------------------//
+
+// const getSomeNumber = function (arr) {
+//   return arr.some(function (item) {
+//     return item < 0;
+//   });
+// };
+
+// console.log(getSomeNumber([3, 2, -1, 0]));
+
+//------------------------------------------------//
+
+// function getArray(arr1, arr2) {
+//   return [...arr1, ...arr2];
+// }
+
+// console.log(getArray([1, 23, 4], [2, 4, 2]));
+
+// //------------------------------------------------//
+
+// function getSum(...arr) {
+//   return arr.reduce((acc, item) => acc + item, 0);
+// }
+// console.log(getSum(2, 3, 1, 4));
+
+// //------------------------------------------------//
+
+// function getArrcopy(obj) {
+//   return { ...obj };
+// }
+// console.log(getArrcopy({ name: "Anna" }));
+
+// //------------------------------------------------//
+
+// function removeFirstElement(...arr) {
+//   const [, ...rest] = arr;
+//   return rest;
+// }
+
+// console.log(removeFirstElement(1, 2, 3, 4, 5));
+
+// //------------------------------------------------//
+
+// function newObj(obj, key, value) {
+//   return {
+//     ...obj,
+//     [key]: value,
+//   };
+// }
+// console.log(newObj({ name: "Alex", age: 25 }, "age", 30));
+//------------------------------------------------//
+// console.log(num);
+// var num;
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+
+// const mus = [2, 1, 4, 1];
+// let mus2 = [];
+// for (let num of mus) {
+//   console.log(num);
+//   mus2.push(num + 1);
+// }
+// console.log(mus2);
