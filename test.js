@@ -1238,6 +1238,152 @@
 
 // console.log(groupByAge(users));
 //------------------------------------------------//
+// const votes = ["Alice", "Bob", "Alice", "Charlie", "Bob", "Bob", "Alice"];
+
+// function countVotes(votes) {
+//   let counVoice = {};
+//   votes.forEach((item) => {
+//     counVoice[item] = (counVoice[item] || 0) + 1;
+//     console.log(counVoice);
+//   });
+//   return counVoice;
+// }
+
+// console.log(countVotes(votes));
+//------------------------------------------------//
+// function countCharacters(str) {
+//   let countSymbol = {};
+//   str.split("").forEach((char) => {
+//     countSymbol[char] = (countSymbol[char] || 0) + 1;
+//   });
+//   return countSymbol;
+// }
+
+// console.log(countCharacters("javascript"));
+
+//------------------------------------------------//
+// function getUniqueValues(arr) {
+//   return [...new Set(arr)];
+// }
+
+// console.log(getUniqueValues([1, 2, 3, 4, 3, 2, 5]));
+//------------------------------------------------//
+
+// function areAnagrams(str1, str2) {
+//   const st1 = str1.split("").sort().join("");
+//   console.log(st1);
+//   const st2 = str2.split("").sort().join("");
+//   console.log(st2);
+//   return st1 === st2;
+// }
+
+// console.log(areAnagrams("listen", "silent")); // true
+// console.log(areAnagrams("hello", "world")); // false
+//------------------------------------------------//
+// function reverseString(str) {
+//   return str.split("").reverse().join("");
+// }
+
+// console.log(reverseString("hello"));
+//------------------------------------------------//
+// function findMax(arr) {
+//   return Math.max(...arr);
+// }
+
+// console.log(findMax([3, 5, 1, 9, 2]));
+//------------------------------------------------//
+// function isPalindrome(str) {
+//   return str.split("").reverse().join("") === str;
+// }
+
+// console.log(isPalindrome("racecar")); // true
+// console.log(isPalindrome("hello")); // false
+//------------------------------------------------//
+// function mergeAndSort(arr1, arr2) {
+//   return arr1.concat(arr2).sort();
+// }
+
+// console.log(mergeAndSort([3, 5, 1], [9, 2, 8]));
+//------------------------------------------------//
+// function objectToArray(obj) {
+//   return Object.entries(obj);
+// }
+
+// console.log(objectToArray({ a: 1, b: 2, c: 3 }));
+//------------------------------------------------//
+// function findIndex(arr, value) {
+//   return arr.findIndex((item) => item === value);
+// }
+
+// console.log(findIndex([1, 2, 3, 4], 3)); // 2
+// console.log(findIndex([1, 2, 3, 4], 5)); // -1
+//------------------------------------------------//
+// function getEvenNumbers(arr) {
+//   return arr.filter((item) => item % 2 === 0);
+// }
+
+// console.log(getEvenNumbers([1, 2, 3, 4, 5, 6]));
+//------------------------------------------------//
+// function capitalizeFirstLetter(str) {
+//   const strMus = str.split(" ");
+//   const capitalizedWords = strMus.map((item) => {
+//     return item.charAt(0).toUpperCase() + item.slice(1);
+//   });
+//   return capitalizedWords.join(" ");
+// }
+
+// console.log(capitalizeFirstLetter("hello world from javascript"));
+//------------------------------------------------//
+// const users = [
+//   { name: "Alice", age: 25 },
+//   { name: "Bob", age: 30 },
+//   { name: "Charlie", age: 20 },
+// ];
+
+// function sortByProperty(arr, prop) {
+//   return arr.sort((a, b) => a[prop] - b[prop]);
+// }
+
+// console.log(sortByProperty(users, "age"));
+//------------------------------------------------//
+// function isPrime(num) {
+//   if (num <= 1) return false;
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) return false;
+//   }
+//   return true;
+// }
+// console.log(isPrime(7)); // true
+// console.log(isPrime(12)); // false
+//------------------------------------------------//
+// var list = ["Дельта", "альфа", "ЧАРЛИ", "браво"];
+
+// // временный массив содержит объекты с позицией и значением сортировки
+// var mapped = list.map(function (el, i) {
+//   return { index: i, value: el.toLowerCase() };
+// });
+// console.log(mapped);
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
+//------------------------------------------------//
 //------------------------------------------------//
 //------------------------------------------------//
 //------------------------------------------------//
