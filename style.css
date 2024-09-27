@@ -11,16 +11,5 @@
   background-color: blue;
   cursor: pointer;
   transition: background-color 2s ease, transform 2s ease;
-  /* transform: rotate(0deg); */
+  /* transform: rotate(3600deg); */
 }
-/* .rotate {
-  animation: rotation 2s linear infinite;
-}
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
