@@ -29,12 +29,13 @@
   margin: 0 auto;
   background-color: bisque;
   margin-bottom: 10px;
+  border: conic-gradient(red 0deg, transparent 0deg);
 }
 .timer p {
   font-size: 46px;
   margin: 0;
 }
-.timer::before {
+/* .timer::before {
   position: absolute;
   content: "";
   display: block;
@@ -42,7 +43,7 @@
   height: 190px;
   border-radius: 50%;
   border: 5px solid rgb(209, 107, 107);
-}
+} */
 .timer-button {
   font-weight: bold;
   width: 90px;

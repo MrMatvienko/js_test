@@ -1,6 +1,7 @@
 const time = document.querySelector(".timer-time");
 const start = document.querySelector(".timer-button");
 const reset = document.querySelector(".timer-reset");
+const timer = document.querySelector(".timer");
 
 let initialCountdown = parseInt(time.textContent); // Змінна для відліку
 let countdown = initialCountdown;
@@ -11,6 +12,7 @@ start.addEventListener("click", () => {
     // Якщо кнопка "START", запускаємо таймер
     start.textContent = "STOP";
     reset.disabled = true;
+    timer.style.borderColor = "green";
     intervalId = setInterval(() => {
       countdown -= 1; // Зменшуємо таймер
       time.textContent = countdown.toString().padStart(2, "0");
@@ -21,6 +23,7 @@ start.addEventListener("click", () => {
         clearInterval(intervalId);
         console.log("Час вийшов!");
         reset.disabled = false;
+        timer.style.borderColor = "";
         start.textContent = "START"; // Повертаємо текст кнопки
         countdown = initialCountdown; // Відновлюємо значення таймера
       }
@@ -36,6 +39,7 @@ reset.addEventListener("click", () => {
   clearInterval(intervalId); // Зупиняємо інтервал, якщо він активний
   countdown = initialCountdown; // Відновлюємо початкове значення таймера
   time.textContent = countdown; // Оновлюємо текст таймера на екрані
+  timer.style.borderColor = "";
   start.textContent = "START"; // Повертаємо текст кнопки "START"
   reset.disabled = false; // Вмикаємо кнопку "RESET"
 });
