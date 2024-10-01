@@ -14,15 +14,17 @@
   height: 450px;
   border: 5px solid black;
   border-radius: 10px;
-  background-color: rgb(211, 120, 120, 0.4);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 .timer-indicator {
-  width: 195px;
-  height: 195px;
+  width: 196px;
+  height: 196px;
   border-radius: 50%;
-  background-color: rgb(223, 8, 8);
+  background-color: rgb(245, 242, 242);
   margin-bottom: 20px;
   background-image: conic-gradient(green 0deg, transparent 0deg);
+  box-shadow: 1px 1px 1px rgb(223, 213, 213), 0 0 2em rgb(231, 227, 223),
+    0 0 0.2em rgb(179, 177, 167);
 }
 .timer {
   position: relative;
@@ -30,10 +32,11 @@
   height: 190px;
   flex-direction: column;
   border-radius: 50%;
-  background-color: bisque;
+  background-color: rgb(0, 0, 0);
 }
 .timer p {
   font-size: 46px;
+  color: white;
   margin: 0;
 }
 
@@ -44,13 +47,7 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 300ms;
-}
-.timer-button:hover {
-  background-color: rgba(114, 103, 103, 0.4);
-}
-.timer-button:focus {
-  background-color: rgba(114, 103, 103, 0.7);
+  transition: background-color 300ms, color 300ms;
 }
 .timer-reset {
   font-weight: bold;
@@ -59,11 +56,10 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 300ms;
+  transition: background-color 300ms, color 300ms;
 }
-.timer-reset:hover {
+.timer-reset:hover,
+.timer-button:hover {
   background-color: rgba(114, 103, 103, 0.4);
-}
-.timer-reset:focus {
-  background-color: rgba(114, 103, 103, 0.7);
+  color: white;
 }

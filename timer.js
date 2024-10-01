@@ -15,11 +15,9 @@ start.addEventListener("click", () => {
     // Якщо кнопка "START", запускаємо таймер
     start.textContent = "STOP";
     reset.disabled = true;
-    timer.style.borderColor = "green";
     intervalId = setInterval(() => {
       countdown -= 1; // Зменшуємо таймер
       time.textContent = countdown.toString().padStart(2, "0");
-      console.log(countdown); // Виводимо значення в консоль
       const elapsedDegrees = (initialCountdown - countdown) * degreesPerSecond;
       indicator.style.backgroundImage = `conic-gradient(green ${elapsedDegrees}deg, transparent ${elapsedDegrees}deg)`;
       // Якщо таймер досягає нуля, зупиняємо інтервал
