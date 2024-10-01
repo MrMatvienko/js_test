@@ -2,10 +2,13 @@ const time = document.querySelector(".timer-time");
 const start = document.querySelector(".timer-button");
 const reset = document.querySelector(".timer-reset");
 const timer = document.querySelector(".timer");
+const indicator = document.querySelector(".timer-indicator");
 
 let initialCountdown = parseInt(time.textContent); // Змінна для відліку
 let countdown = initialCountdown;
 let intervalId; // Змінна для збереження ID інтервалу
+const totalDegrees = 360;
+const degreesPerSecond = totalDegrees / initialCountdown;
 
 start.addEventListener("click", () => {
   if (start.textContent === "START") {
@@ -17,13 +20,13 @@ start.addEventListener("click", () => {
       countdown -= 1; // Зменшуємо таймер
       time.textContent = countdown.toString().padStart(2, "0");
       console.log(countdown); // Виводимо значення в консоль
-
+      const elapsedDegrees = (initialCountdown - countdown) * degreesPerSecond;
+      indicator.style.backgroundImage = `conic-gradient(green ${elapsedDegrees}deg, transparent ${elapsedDegrees}deg)`;
       // Якщо таймер досягає нуля, зупиняємо інтервал
       if (countdown <= 0) {
         clearInterval(intervalId);
-        console.log("Час вийшов!");
         reset.disabled = false;
-        timer.style.borderColor = "";
+        indicator.style.backgroundImage = "";
         start.textContent = "START"; // Повертаємо текст кнопки
         countdown = initialCountdown; // Відновлюємо значення таймера
       }
@@ -39,7 +42,7 @@ reset.addEventListener("click", () => {
   clearInterval(intervalId); // Зупиняємо інтервал, якщо він активний
   countdown = initialCountdown; // Відновлюємо початкове значення таймера
   time.textContent = countdown; // Оновлюємо текст таймера на екрані
-  timer.style.borderColor = "";
+  indicator.style.backgroundImage = "";
   start.textContent = "START"; // Повертаємо текст кнопки "START"
   reset.disabled = false; // Вмикаємо кнопку "RESET"
 });
