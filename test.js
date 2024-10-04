@@ -1,52 +1,52 @@
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
 
-const cube = document.querySelector(".cube");
-cube.addEventListener("click", toggleRotation);
-let rotate = 0;
-let isRotation = false;
-let lastTimes = 0;
-let colorInterval;
-let scaleInterval;
-let isScalingUp = false;
-let currentScale = 1;
-const rotationSpeed = 1;
+// const cube = document.querySelector(".cube");
+// cube.addEventListener("click", toggleRotation);
+// let rotate = 0;
+// let isRotation = false;
+// let lastTimes = 0;
+// let colorInterval;
+// let scaleInterval;
+// let isScalingUp = false;
+// let currentScale = 1;
+// const rotationSpeed = 1;
 
-function toggleRotation() {
-  if (!isRotation) {
-    isRotation = true;
+// function toggleRotation() {
+//   if (!isRotation) {
+//     isRotation = true;
 
-    colorInterval = setInterval(() => {
-      const randomColor = getRandomHexColor();
-      cube.style.backgroundColor = randomColor;
-    }, 2000);
+//     colorInterval = setInterval(() => {
+//       const randomColor = getRandomHexColor();
+//       cube.style.backgroundColor = randomColor;
+//     }, 2000);
 
-    scaleInterval = setInterval(() => {
-      currentScale = isScalingUp ? 1.5 : 1;
-      isScalingUp = !isScalingUp;
-      cube.style.transform = `scale(${currentScale}) rotate(${rotate}deg)`;
-    }, 2000);
+//     scaleInterval = setInterval(() => {
+//       currentScale = isScalingUp ? 1.5 : 1;
+//       isScalingUp = !isScalingUp;
+//       cube.style.transform = `scale(${currentScale}) rotate(${rotate}deg)`;
+//     }, 2000);
 
-    requestAnimationFrame(rotateCube);
-  } else {
-    isRotation = false;
-    clearInterval(colorInterval);
-    clearInterval(scaleInterval);
-  }
-}
+//     requestAnimationFrame(rotateCube);
+//   } else {
+//     isRotation = false;
+//     clearInterval(colorInterval);
+//     clearInterval(scaleInterval);
+//   }
+// }
 
-function rotateCube() {
-  if (!isRotation) return;
-  rotate += rotationSpeed;
-  // console.log(rotate);
+// function rotateCube() {
+//   if (!isRotation) return;
+//   rotate += rotationSpeed;
+//   // console.log(rotate);
 
-  cube.style.transform = `scale(${currentScale}) rotate(${rotate}deg)`;
+//   cube.style.transform = `scale(${currentScale}) rotate(${rotate}deg)`;
 
-  requestAnimationFrame(rotateCube);
-}
+//   requestAnimationFrame(rotateCube);
+// }
 
 // a = -5;
 
