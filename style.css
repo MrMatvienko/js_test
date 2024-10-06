@@ -80,11 +80,3 @@ img {
 .right {
   transform: rotateY(90deg) translateZ(90px);
 }
-li:nth-child(2n + 1) {
-  background-color: rgb(
-    42,
-    134,
-    187,
-    0.9
-  ); /* Застосовуємо фон для кожного другого елемента */
-}
