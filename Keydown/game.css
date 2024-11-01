@@ -1,0 +1,26 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+.game-section {
+  max-width: 1140px;
+  height: 100vh;
+  padding: 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  background-color: brown;
+  transition: all 300ms;
+}
+.game-line {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
