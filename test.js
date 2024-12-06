@@ -1,3 +1,11 @@
+// const arr = [1, 2, 4, 5, 8];
+// arr2 = [];
+// arr.map((item) => arr2.push(item));
+// console.log(arr2);
+// console.log(arr.slice());
+// console.log(Array.from(arr));
+// console.log(...arr);
+
 // function getRandomHexColor() {
 //   return `#${Math.floor(Math.random() * 16777215)
 //     .toString(16)
