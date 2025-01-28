@@ -1432,3 +1432,13 @@
 //   mus2.push(num + 1);
 // }
 // console.log(mus2);
+
+const mus = {
+  name: "Sara",
+  age: 18,
+};
+mus.name = "Anna";
+mus.city = "Kyiv";
+mus.child = {};
+mus.child.first = "Emma";
+console.log(mus);
