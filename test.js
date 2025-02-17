@@ -1433,12 +1433,70 @@
 // }
 // console.log(mus2);
 
-const mus = {
-  name: "Sara",
-  age: 18,
-};
-mus.name = "Anna";
-mus.city = "Kyiv";
-mus.child = {};
-mus.child.first = "Emma";
-console.log(mus);
+// const mus = {
+//   name: "Sara",
+//   age: 18,
+// };
+// mus.name = "Anna";
+// mus.city = "Kyiv";
+// mus.child = {};
+// mus.child.first = "Emma";
+// console.log(mus);
+
+// const obj = {
+//   name: "Anna",
+//   getName() {
+//     console.log(this.name);
+//   },
+// };
+// obj.getName();
+
+// function greet() {
+//   console.log(`Hello, ${this.name}`);
+// }
+
+// const person = { name: "Emma" };
+// greet.apply(person);
+
+// const A = {
+//   value: 34,
+// };
+// const B = Object.create(A);
+// console.log(B);
+// B.value = 20;
+// B.age = 10;
+// console.log(B.value);
+// const person = {
+//   name: "James",
+//   getName: () => {
+//     return this.name;
+//   },
+// };
+// console.log(person.getName());
+
+// function generatePassword(length) {
+//   let password = "";
+//   const chars =
+//     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
+//   for (let i = 0; i < length; i++) {
+//     let randomIndex = Math.floor(Math.random() * chars.length);
+//     password += chars[randomIndex];
+//   }
+//   return password;
+// }
+// console.log(generatePassword(10));
+// function uniqueValues(arr) {
+//   return [...new Set(arr)];
+// }
+// console.log(uniqueValues([1, 2, 3, 2, 4, 1, 5, 6, 5, 7]));
+function toCamelCase(str) {
+  const mus = str.split(/[\s-_]+/);
+  const camelCased = mus.map((word, index) =>
+    index === 0 ? word : word[0].toUpperCase() + word.slice(1)
+  );
+  return camelCased.join("");
+}
+
+console.log(toCamelCase("hello world"));
+console.log(toCamelCase("make-javascript-great-again"));
+console.log(toCamelCase("convert_this_text"));
