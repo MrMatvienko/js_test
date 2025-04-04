@@ -16,21 +16,6 @@ img {
 .list {
   list-style: none;
 }
-.cube {
-  display: flex;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 50px;
-  width: 200px;
-  border: none;
-  height: 200px;
-  background-color: blue;
-  cursor: pointer;
-  transition: background-color 2s ease, transform 2s ease;
-}
-
 .carusel {
   position: relative;
   width: 100%;

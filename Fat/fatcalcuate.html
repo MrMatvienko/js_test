@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div><a href="/index.html">Back</a></div>
+    </header>
+    <section class="calculate_section">
+      <h2>Калькулятор калорій</h2>
+      <form class="form_calculate">
+        <label>
+          Вага:
+          <input
+            type="number"
+            placeholder="Введіть вагу в кг"
+            id="mus"
+            min="1"
+          />
+        </label>
+        <label>
+          Ріст:
+          <input
+            type="number"
+            placeholder="Введіть зріст в см"
+            id="growth"
+            min="40"
+          />
+        </label>
+        <label>
+          Вік:
+          <input type="number" placeholder="Введіть вік" id="age" min="1" />
+        </label>
+        <label class="form_exchange-output">
+          Основний обмін:
+          <output id="exchange">0</output>
+          <button class="form_reset">Обнулити</button>
+        </label>
+      </form>
+    </section>
+
+    <script src="./fat.js"></script>
+  </body>
+</html>

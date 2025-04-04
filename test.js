@@ -1489,14 +1489,93 @@
 //   return [...new Set(arr)];
 // }
 // console.log(uniqueValues([1, 2, 3, 2, 4, 1, 5, 6, 5, 7]));
-function toCamelCase(str) {
-  const mus = str.split(/[\s-_]+/);
-  const camelCased = mus.map((word, index) =>
-    index === 0 ? word : word[0].toUpperCase() + word.slice(1)
-  );
-  return camelCased.join("");
-}
+// function toCamelCase(str) {
+//   const mus = str.split(/[\s-_]+/);
+//   const camelCased = mus.map((word, index) =>
+//     index === 0 ? word : word[0].toUpperCase() + word.slice(1)
+//   );
+//   return camelCased.join("");
+// }
 
-console.log(toCamelCase("hello world"));
-console.log(toCamelCase("make-javascript-great-again"));
-console.log(toCamelCase("convert_this_text"));
+// console.log(toCamelCase("hello world"));
+// console.log(toCamelCase("make-javascript-great-again"));
+// console.log(toCamelCase("convert_this_text"));
+
+// function isAnagram(str1, str2) {
+//   return (
+//     str1.toLowerCase().split("").sort().join("") ===
+//     str2.toLowerCase().split("").sort().join("")
+//   );
+// }
+// console.log(isAnagram("listen", "silent"));
+// // Вихід: true
+
+// console.log(isAnagram("hello", "world"));
+// // Вихід: false
+
+// console.log(isAnagram("Dormitory", "Dirtyroom"));
+
+// function isPalindrome(num) {
+//   return num === Number(num.toString().split("").reverse().join(""));
+// }
+// console.log(isPalindrome(121)); // Вихід: true
+// console.log(isPalindrome(12321)); // Вихід: true
+// console.log(isPalindrome(123)); // Вихід: false
+// console.log(isPalindrome(-121)); // Вихід: false
+// console.log(isPalindrome(10));
+
+// function countVowels(str) {
+//   const letter = "aeiou";
+//   const lowerStr = str.toLowerCase().split("");
+//   const countLetter = lowerStr.filter((item) => letter.includes(item)).length;
+//   return countLetter;
+// }
+// console.log(countVowels("Hello World")); // 3
+// console.log(countVowels("JavaScript is awesome!")); // 8
+// console.log(countVowels("BCDFG")); // 0
+// console.log(countVowels("AEIOUaeiou")); // 10
+
+// function removeDuplicates(arr) {
+//   return [...new Set(arr)];
+// }
+// console.log(removeDuplicates([1, 2, 3, 4, 4, 5, 6, 6, 7]));
+// // Вихід: [1, 2, 3, 4, 5, 6, 7]
+
+// console.log(removeDuplicates([10, 20, 20, 30, 40, 50, 50, 60]));
+// // Вихід: [10, 20, 30, 40, 50, 60]
+
+// console.log(removeDuplicates([1, 1, 1, 1, 1]));
+
+// class Auto {
+//   constructor(spead, gas, oil) {
+//     this.spead = spead;
+//     this.gas = gas;
+//     this.oil = oil;
+//   }
+// }
+// const vw = new Auto(23, 20, 7);
+// console.log(vw);
+// let allMus = 0;
+// let age = 0;
+// let growth = 0;
+// let fat = 0;
+
+// function processNumbers(arr) {
+//   return arr
+//     .filter((item) => item >= 0)
+//     .map((item) => item ** 2)
+//     .sort(function (a, b) {
+//       return a - b;
+//     });
+// }
+// console.log(processNumbers([3, -1, 2, -7, 5, 0]));
+// console.log(processNumbers([3, -1, 2, -7, 5, 0])); // [0, 4, 9, 25]
+// console.log(processNumbers([-10, -5, -3])); // []
+// console.log(processNumbers([7, 1, 3])); // [1, 9, 49]
+// function processStrings(mus) {
+//   return mus
+//     .filter((item) => item.length > 3)
+//     .map((item) => item.toUpperCase())
+//     .sort();
+// }
+// console.log(processStrings(["hi", "hello", "ok", "world", "js"]));
