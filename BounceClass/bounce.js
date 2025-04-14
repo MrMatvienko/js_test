@@ -1,19 +1,25 @@
 import { Circle } from "./circleClass.js";
 
-const circleElem = document.getElementById("circle-1");
-const circle = new Circle(circleElem);
+const listItems = document.querySelectorAll(".bounce_list-item");
 
-const colorInput = document.getElementById("circle-color-1");
-const radiusInput = document.getElementById("circle-radius-1");
-const borderInput = document.getElementById("circle-border-1");
+listItems.forEach((item) => {
+  const circleElem = item.querySelector(".item_circle");
+  const colorInput = item.querySelector('input[type="text"]');
+  const [radiusInput, borderInput] = item.querySelectorAll(
+    'input[type="number"]'
+  );
 
-function handleInput() {
-  circle.updateElement({
-    color: colorInput.value,
-    radius: parseInt(radiusInput.value),
-    border: parseInt(borderInput.value),
-  });
-}
-colorInput.addEventListener("input", handleInput);
-radiusInput.addEventListener("input", handleInput);
-borderInput.addEventListener("input", handleInput);
+  const circle = new Circle(circleElem);
+
+  function handleInput() {
+    circle.updateElement({
+      color: colorInput.value,
+      radius: parseInt(radiusInput.value),
+      border: parseInt(borderInput.value),
+    });
+  }
+
+  colorInput.addEventListener("input", handleInput);
+  radiusInput.addEventListener("input", handleInput);
+  borderInput.addEventListener("input", handleInput);
+});
