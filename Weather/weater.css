@@ -1,0 +1,29 @@
+body {
+  margin: 0 auto;
+  padding: 20px;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+img {
+  display: block;
+}
+
+.weather__form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  width: 100%;
+}
+.form__select {
+  width: 40px;
+  height: 20px;
+  margin-top: 20px;
+}
